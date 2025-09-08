@@ -1,27 +1,26 @@
-import { Navbar } from "../Navbar/Navbar";
-// import { useState } from "react";
+import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import { MapPin, Phone, Mail, Clock } from "lucide-react";
-// import Navbar from "../Navbar/Navbar";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import Navbar from "../Navbar/Navbar";  
 
 
 const Contact = () => {
-//   const [formData, setFormData] = useState({
-//     name: "",
-//     email: "",
-//     subject: "",
-//     message: ""
-//   });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     alert("Message Sent! We'll get back to you within 24 hours.");
-//     setFormData({ name: "", email: "", subject: "", message: "" });
-//   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Message Sent! We'll get back to you within 24 hours.");
+    setFormData({ name: "", email: "", subject: "", message: "" });
+  };
 
-//   const handleChange = (e) => {
-//     setFormData({ ...formData, [e.target.name]: e.target.value });
-//   };
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   return (
     <div className="min-vh-100 bg-light">
@@ -103,7 +102,7 @@ const Contact = () => {
             <div className="d-flex flex-column gap-3">
               <div className="card p-3 shadow-sm">
                 <div className="d-flex">
-                  {/* <MapPin size={24} className="text-primary me-3" /> */}
+                  <MapPin size={24} className="text-primary me-3" />
                   <div>
                     <h5>Our Location</h5>
                     <p className="text-muted mb-0">
@@ -117,7 +116,7 @@ const Contact = () => {
 
               <div className="card p-3 shadow-sm">
                 <div className="d-flex">
-                  {/* <Phone size={24} className="text-primary me-3" /> */}
+                  <Phone size={24} className="text-primary me-3" />
                   <div>
                     <h5>Phone</h5>
                     <p className="text-muted mb-0">+1 (555) 123-4567</p>
@@ -137,7 +136,7 @@ const Contact = () => {
 
               <div className="card p-3 shadow-sm">
                 <div className="d-flex">
-                  {/* <Clock size={24} className="text-primary me-3" /> */}
+                  <Clock size={24} className="text-primary me-3" />
                   <div>
                     <h5>Store Hours</h5>
                     <p className="text-muted mb-1">Monday - Friday: 8:00 AM - 8:00 PM</p>

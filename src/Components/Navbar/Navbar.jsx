@@ -63,35 +63,27 @@ const Navbar = ({ route }) => {
       <div class="hidden md:block">
         <div class="ml-10 items-baseline custom-box">
           <a
-            href="#"
+            href="/"
             class="nav-link text-gray-700 font-medium"
             onclick="showPage('home')"
           >
             Home
           </a>
           <a
-            href="#"
+            href="/About"
             class="nav-link text-gray-700 font-medium"
             onclick="showPage('home')"
           >
             About
           </a>
-          <a
-            href="#"
-            class="nav-link text-gray-700 font-medium"
-            onclick="showPage('products')"
-          >
-            Products
-          </a>
-          <Link to="./Contact"><a
-            
-            class="nav-link text-gray-700 font-medium"
-            onclick="showPage('Contact')"
-          >
+          <Link to="/products" className="nav-link text-gray-700 font-medium">
+            Product
+          </Link>
+          <Link to="/Contact" className="nav-link text-gray-700 font-medium">
             Contact
-          </a></Link>
+          </Link>
           <a
-            href="#"
+            href="/Services"
             class="nav-link text-gray-700 font-medium"
             onclick="showPage('help')"
           >
@@ -149,4 +141,4 @@ const Navbar = ({ route }) => {
   );
 };
 
-export { Navbar };
+export default Navbar;

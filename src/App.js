@@ -2,6 +2,8 @@ import './App.css';
 import { RequiresAuth } from './Components';
 import {  Routes,Route } from "react-router-dom";
 import { Home,Products,Wishlist,Cart,Login,SignUp,SingleProduct, Address, CheckoutPage,Order,Error } from "./Pages";
+import Contact from "./Components/Contact/Contact";
+import About from './Components/About/About';
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/order" element={<Order />} />
         <Route path="*" element ={<Error/>}/>
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Services" element={<Services />} />
      </Routes>
     </div>
   );
