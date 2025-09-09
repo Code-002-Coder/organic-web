@@ -19,11 +19,11 @@ const Footer = () => {
           <div className="col-md-3 mb-4">
             <h5 className="fw-semibold mb-3">Quick Links</h5>
             <ul className="list-unstyled">
-              <li><a href="#home" className="text-light text-decoration-none">Home</a></li>
-              <li><a href="#home" className="text-light text-decoration-none">About</a></li>
-              <li><a href="#products" className="text-light text-decoration-none">Products</a></li>
-              <li><a href="#contact" className="text-light text-decoration-none">Contact</a></li>
-              <li><a href="#help" className="text-light text-decoration-none">Services</a></li>
+              <li><a href="/" className="text-light text-decoration-none">Home</a></li>
+              <li><a href="/About" className="text-light text-decoration-none">About</a></li>
+              <li><a href="/products" className="text-light text-decoration-none">Products</a></li>
+              <li><a href="/Contact" className="text-light text-decoration-none">Contact</a></li>
+              <li><a href="/Services" className="text-light text-decoration-none">Services</a></li>
             </ul>
           </div>
 
@@ -31,9 +31,9 @@ const Footer = () => {
           <div className="col-md-3 mb-4">
             <h5 className="fw-semibold mb-3">Categories</h5>
             <ul className="list-unstyled">
-              <li><a href="#honey" className="text-light text-decoration-none">Vegetables</a></li>
-              <li><a href="#sugar" className="text-light text-decoration-none">Fruits</a></li>
-              <li><a href="#turmeric" className="text-light text-decoration-none">Others</a></li>
+              <li><a href="/products" className="text-light text-decoration-none">Vegetables</a></li>
+              <li><a href="/products" className="text-light text-decoration-none">Fruits</a></li>
+              <li><a href="/products" className="text-light text-decoration-none">Others</a></li>
             </ul>
           </div>
 
@@ -42,7 +42,7 @@ const Footer = () => {
             <h5 className="fw-semibold mb-3">Contact Info</h5>
             <p>📍 123 Organic Street, Green Valley, CA</p>
             <p>📞 +1 (555) 123-4567</p>
-            <p>✉️ contect@thefarmfresh.com</p>
+            <p>✉️ contact@thefarmfresh.com</p>
           </div>
         </div>
 

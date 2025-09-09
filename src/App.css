@@ -16,3 +16,23 @@
 :root{
   --primary-color:#3d860b;
 }
+
+.fixed-sidebar {
+  position: sta;
+  top: 80px; /* adjust if your navbar is taller/shorter */
+  left: 0;
+  height: calc(100vh - 80px); /* adjust for navbar height */
+  overflow-y: auto;
+  width: 250px; /* or your sidebar width */
+  background: #fff; /* optional: match your design */
+  /* z-index: 100; */
+}
+
+@media (max-width: 768px) {
+  .fixed-sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    overflow-y: visible;
+  }
+}

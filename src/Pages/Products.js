@@ -66,7 +66,7 @@ const Products = () => {
       </div>
       {!error ? (
         <div className="d-flex">
-  <aside className="side-nav border-right sidebar-position h-75 ">
+  <aside className="side-nav border-right sidebar-position ">
           <ClearFilter />
           <PriceRange />
           <FilterByCategory />

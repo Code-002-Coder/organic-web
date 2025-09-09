@@ -79,7 +79,7 @@ const Navbar = ({ route }) => {
             About
           </a>
           <Link to="/products" className="nav-link text-gray-700 font-medium">
-            Product
+            Products
           </Link>
           <Link to="/Contact" className="nav-link text-gray-700 font-medium">
             Contact
