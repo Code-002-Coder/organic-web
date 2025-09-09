@@ -24,4 +24,5 @@ export { Alert } from "./Alert/Alert";
 export { AddressForm } from "./Address/AddressForm";
 export { DisplayAddress } from "./Address/DisplayAddress";
 export { Checkout } from "./Checkout/Checkout";
-export { Brands } from "./Brands/Brands"
+export { Brands } from "./Brands/Brands";
+export { default as Services } from "./Services/Services";

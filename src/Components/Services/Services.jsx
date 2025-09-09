@@ -1,13 +1,16 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "../Navbar/Navbar";
 
 const Services = () => {
   return (
-    <div className="min-vh-100 bg-light">
+    <>
+    <Navbar />
+    <div className="min-vh-100 my-5 bg-light ">
       {/* Services Content */}
-      <main className="container py-5">
+      <main className="container my-5 ">
         {/* Title */}
-        <div className="text-center mb-5">
+        <div className="text-center my-5 mb-5">
           <h1 className="fw-bold">Our Services</h1>
           <p className="text-muted mx-auto" style={{ maxWidth: "700px" }}>
             At OrganicShop, we go beyond just selling organic products. We
@@ -109,7 +112,8 @@ const Services = () => {
           </div>
         </div>
       </main>
-    </div>
+    </div></>
+
   );
 };
 

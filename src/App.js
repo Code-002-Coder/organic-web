@@ -2,8 +2,10 @@ import './App.css';
 import { RequiresAuth } from './Components';
 import {  Routes,Route } from "react-router-dom";
 import { Home,Products,Wishlist,Cart,Login,SignUp,SingleProduct, Address, CheckoutPage,Order,Error } from "./Pages";
+
 import Contact from "./Components/Contact/Contact";
 import About from './Components/About/About';
+import { Services } from './Components';
 
 function App() {
   return (
