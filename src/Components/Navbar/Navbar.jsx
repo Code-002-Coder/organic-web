@@ -29,10 +29,12 @@ const Navbar = ({ route }) => {
 
 
   return (
-    <header className="heading d-flex grow1-shrink1-basisauto align-center fixed top-0 left-0">
+    <header className="heading d-flex grow1-shrink1-basisauto align-center fixed top-0 left-0 ">
       <div className="heading-title-icon d-flex align-center">
         <img
           className="icon mr-1 border-radius-50"
+          // width={"40px"}
+          // height={"40px"}
           src="https://img.freepik.com/free-vector/100-organic-quality-food-green-sticker-label-design_1017-25574.jpg?size=338&ext=jpg&ga=GA1.1.1700460183.1713052800&semt=ais"
           alt="lightbulb"
         />
@@ -43,7 +45,7 @@ const Navbar = ({ route }) => {
         </h1>
       </div>
       {route === "product" && (
-        <div className="search-box-container relative">
+        <div className="search-box-container relative searchonproduct">
         <input
           className="search-box padding-all-8"
           type="text"

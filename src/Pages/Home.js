@@ -39,7 +39,7 @@ import {
             <Category />
           <Brands />
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
       )}
       </Fragment>

@@ -61,10 +61,12 @@ const Products = () => {
   return (
     <Fragment>
       {isLoading ? <Loader /> : (<div className="page">
+      <div className="">
       <Navbar route={route} />
+      </div>
       {!error ? (
         <div className="d-flex">
-        <aside className="side-nav border-right sidebar-position">
+  <aside className="side-nav border-right sidebar-position h-75 ">
           <ClearFilter />
           <PriceRange />
           <FilterByCategory />

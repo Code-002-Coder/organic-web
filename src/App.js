@@ -1,14 +1,16 @@
 import './App.css';
-import { RequiresAuth } from './Components';
+import { Navbar, RequiresAuth } from './Components';
 import {  Routes,Route } from "react-router-dom";
 import { Home,Products,Wishlist,Cart,Login,SignUp,SingleProduct, Address, CheckoutPage,Order,Error } from "./Pages";
-
+import { Footer } from './Components';
 import Contact from "./Components/Contact/Contact";
 import About from './Components/About/About';
 import { Services } from './Components';
 
 function App() {
   return (
+    <>
+    {/* <Navbar /> */}
     <div className='App'>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -27,6 +29,8 @@ function App() {
         <Route path="/Services" element={<Services />} />
      </Routes>
     </div>
+    <Footer />
+    </>
   );
 }
 
