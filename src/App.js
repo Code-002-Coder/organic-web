@@ -12,7 +12,8 @@ function App() {
   const location = useLocation();
   return (
     <>
-      <Navbar />   {/* Navbar now applied globally */}
+      {/* Navbar now applied globally */}
+      {/* <Navbar />    */}
       <div className='App'>
         <Routes>
           <Route path="/" element={<Home />} />

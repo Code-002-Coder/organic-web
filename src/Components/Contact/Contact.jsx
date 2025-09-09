@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import Navbar from "../Navbar/Navbar";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,9 +22,11 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-vh-100 bg-light mx-5">
+    <>
+    <Navbar />
+    <div className="min-vh-100 bg-light my-5 py-4 ">
       <main className="container py-5">
-        <div className="text-center mb-5">
+        <div className="text-center mb-5 ">
           <h1 className="fw-bold mb-3">Contact Us</h1>
           <p className="text-muted mx-auto" style={{ maxWidth: "600px" }}>
             Have questions about our organic products? We'd love to hear from
@@ -31,8 +34,8 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="row g-4">
           {/* Contact Form */}
+``        <div className="row g-4">
           <div className="col-lg-6">
             <div className="card shadow-sm">
               <div className="card-header">
@@ -155,6 +158,7 @@ const Contact = () => {
         </div>
       </main>
     </div>
+    </>
   );
 };
 
