@@ -1,3 +1,4 @@
+// File removed. Backend logic moved to /backend
 import { v4 as uuid } from "uuid";
 import { formatDate } from "../utils/authUtils";
 /**

@@ -91,6 +91,13 @@ const Navbar = ({ route }) => {
           >
             Servies
           </a>
+          <a
+            href="/signup"
+            class="nav-link text-gray-700 font-medium"
+            onclick="showPage('home')"
+          >
+            Sign Up
+          </a>
         </div>
       </div>
 

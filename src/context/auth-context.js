@@ -45,16 +45,14 @@ const AuthProvider = ({ children }) => {
   const userSignup = async (firstName, email, password, setAlert) => {
     try {
       const {
-        data: { createdUser, encodedToken }
-      } = await axios.post('api/auth/signup', {
+        data: { user }
+      } = await axios.post('http://localhost:5000/auth/signup', {
         email: email,
         password: password,
         firstName: firstName
       });
-      localStorage.setItem('token', encodedToken);
-      setEToken(encodedToken);
-      localStorage.setItem('user', JSON.stringify(createdUser));
-      setEUser(createdUser);
+      localStorage.setItem('user', JSON.stringify(user));
+      setEUser(user);
       navigate('/login');
       setAlert({
         open: true,
@@ -63,11 +61,16 @@ const AuthProvider = ({ children }) => {
       });
     } catch (err) {
       console.log(err);
-      // console.log(err.response.data);
-      if (err.response.status === 422) {
+      if (err.response && err.response.status === 422) {
         setAlert({
           open: true,
           message: 'User Already exists',
+          type: 'error'
+        });
+      } else {
+        setAlert({
+          open: true,
+          message: 'Signup failed',
           type: 'error'
         });
       }
@@ -77,17 +80,15 @@ const AuthProvider = ({ children }) => {
   const userLogin = async (email, password, setAlert) => {
     try {
       const {
-        data: { foundUser, encodedToken },
+        data: { user },
         status
-      } = await axios.post('/api/auth/login', {
+      } = await axios.post('http://localhost:5000/auth/login', {
         email: email,
         password: password
       });
       if (status === 200) {
-        localStorage.setItem('token', encodedToken);
-        setEToken(encodedToken);
-        localStorage.setItem('user', JSON.stringify(foundUser));
-        setEUser(JSON.parse(localStorage.getItem('user')).firstName);
+        localStorage.setItem('user', JSON.stringify(user));
+        setEUser(user.firstName || user.email);
         navigate(location?.state?.from?.pathname || '/', { replace: true });
         setAlert({
           open: true,
@@ -97,7 +98,6 @@ const AuthProvider = ({ children }) => {
       }
     } catch (err) {
       console.log('from context error - ', err);
-      // console.log(err.response.data);
       setAlert({
         open: true,
         message: 'User Not Found',

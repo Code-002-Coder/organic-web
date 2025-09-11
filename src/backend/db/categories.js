@@ -1,3 +1,4 @@
+// File removed. Backend logic moved to /backend
 import { v4 as uuid } from "uuid";
 // import menShoes from "../../assets/Mens.png";
 // import womenShoes from "../../assets/Womens.png";

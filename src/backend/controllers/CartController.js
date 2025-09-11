@@ -1,3 +1,4 @@
+// File removed. Backend logic moved to /backend
 import { Response } from "miragejs";
 import { formatDate, requiresAuth } from "../utils/authUtils";
 

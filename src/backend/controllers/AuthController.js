@@ -1,7 +1,6 @@
-import { v4 as uuid } from "uuid";
+// File removed. Backend logic moved to /backend
 import { Response } from "miragejs";
-import { formatDate } from "../utils/authUtils";
-const sign = require("jwt-encode");
+const { signup, login } = require("../utils/userFileAuth");
 /**
  * All the routes related to Auth are present here.
  * These are Publicly accessible routes.
@@ -14,41 +13,15 @@ const sign = require("jwt-encode");
  * */
 
 export const signupHandler = function (schema, request) {
-  const { email, password, ...rest } = JSON.parse(request.requestBody);
+  const { email, password, firstName, lastName, isAdmin } = JSON.parse(request.requestBody);
   try {
-    // check if email already exists
-    const foundUser = schema.users.findBy({ email });
-    if (foundUser) {
-      return new Response(
-        422,
-        {},
-        {
-          errors: ["Unprocessable Entity. Email Already Exists."],
-        }
-      );
+    const result = signup({ email, password, firstName, lastName, isAdmin });
+    if (!result.success) {
+      return new Response(422, {}, { errors: [result.message] });
     }
-    const _id = uuid();
-    const newUser = {
-      _id,
-      email,
-      password,
-      createdAt: formatDate(),
-      updatedAt: formatDate(),
-      ...rest,
-      cart: [],
-      wishlist: [],
-    };
-    const createdUser = schema.users.create(newUser);
-    const encodedToken = sign({ _id, email }, process.env.REACT_APP_JWT_SECRET);
-    return new Response(201, {}, { createdUser, encodedToken });
+    return new Response(201, {}, { user: result.user });
   } catch (error) {
-    return new Response(
-      500,
-      {},
-      {
-        error,
-      }
-    );
+    return new Response(500, {}, { error });
   }
 };
 
@@ -61,38 +34,14 @@ export const signupHandler = function (schema, request) {
 export const loginHandler = function (schema, request) {
   const { email, password } = JSON.parse(request.requestBody);
   try {
-    const foundUser = schema.users.findBy({ email });
-    if (!foundUser) {
-      return new Response(
-        404,
-        {},
-        { errors: ["The email you entered is not Registered. Not Found error"] }
-      );
+    const result = login({ email, password });
+    if (!result.success) {
+      return new Response(401, {}, { errors: [result.message] });
     }
-    if (password === foundUser.password) {
-      const encodedToken = sign(
-        { _id: foundUser._id, email },
-        process.env.REACT_APP_JWT_SECRET
-      );
-      foundUser.password = undefined;
-      return new Response(200, {}, { foundUser, encodedToken });
-    }
-    new Response(
-      401,
-      {},
-      {
-        errors: [
-          "The credentials you entered are invalid. Unauthorized access error.",
-        ],
-      }
-    );
+    const user = { ...result.user };
+    delete user.password;
+    return new Response(200, {}, { user });
   } catch (error) {
-    return new Response(
-      500,
-      {},
-      {
-        error,
-      }
-    );
+    return new Response(500, {}, { error });
   }
 };
